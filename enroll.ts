@@ -13,7 +13,7 @@ const provider = new AnchorProvider(connection, new Wallet(keypair), {
 });
 const program: Program<Turbin3Prereq & Idl> = new Program(IDL, provider);
 
-const enrollment_seeds = [Buffer.from('pre'), keypair.publicKey.toBuffer()];
+const enrollment_seeds = [Buffer.from('prereq'), keypair.publicKey.toBuffer()];
 const [enrollment_key, _bump] = PublicKey.findProgramAddressSync(
 	enrollment_seeds,
 	program.programId
